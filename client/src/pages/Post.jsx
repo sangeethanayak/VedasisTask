@@ -40,8 +40,8 @@ const Post = () => {
 
         const data = await response.json();
         setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
-      } catch (err) {
-        alert(err);
+      } catch (error) {
+        alert(error);
       } finally {
         setGeneratingImg(false);
       }

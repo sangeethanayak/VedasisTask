@@ -48,6 +48,7 @@ const Home = () => {
     fetchPosts();
   }, []);
 
+
   const handleSearchChange = (e) => {
     clearTimeout(searchTimeout);
     setSearchText(e.target.value);
