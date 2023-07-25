@@ -1,0 +1,19 @@
+.content{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(233, 248, 255);
+    border-top:3px solid rgb(231, 238, 245) ;
+}
+.sub-container{
+    position: absolute;
+    flex-direction: column;
+    background-color: whitesmoke;
+    margin-top: 40px;
+    margin-left: 160px;
+    padding: 15px 60px;
+    border-radius: 20px;
+}

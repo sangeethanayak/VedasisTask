@@ -1,0 +1,40 @@
+.vertical-navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 60px;
+    height: 100vh;
+    background-color: #fcfcfc;
+    padding: 20px;
+    border-right:3px solid rgb(231, 238, 245) ;
+    z-index: 10;
+    position: relative;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 40px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  .icons {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 300px;
+  }
+  
+  .icon {
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .settings-icon {
+    font-size: 28px;
+    margin-bottom:30px;
+    color: #333;
+    cursor: pointer;
+  }
