@@ -12,8 +12,20 @@
     position: absolute;
     flex-direction: column;
     background-color: whitesmoke;
-    margin-top: 40px;
-    margin-left: 160px;
-    padding: 15px 60px;
+    margin-top: 60px;
+    margin-left: 340px;
+    
     border-radius: 20px;
+}
+#icon3{
+    position: absolute;
+    margin-left: 240px;
+    margin-top: -10px;
+}
+
+
+.sub-content{
+    position: absolute;
+    margin-top: 140px;
+    margin-left: 150px;
 }
