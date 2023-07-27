@@ -1,6 +1,7 @@
 import React from 'react';
 import './header.css';
 import profile from './profile.jpg';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 const Header = () => {
   return (
     <div className="header">
@@ -16,6 +17,7 @@ const Header = () => {
     
     <span class="brand">Brand</span>
     </div>
+    <ExpandMoreIcon />
     </div>
     </div>
   );

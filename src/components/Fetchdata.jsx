@@ -4,10 +4,10 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 import { styled } from '@mui/material/styles';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  backgroundColor: '#277BC0',
+  backgroundColor: '#2892d7',
   color: theme.palette.common.white,
   fontWeight: 'bold',
-  fontSize: '18px'
+  fontSize: '20px'
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
@@ -19,11 +19,13 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
   borderRadius: '20px', 
   overflow: 'hidden',
-  backgroundColor: '#FFFFFF'
+  backgroundColor: '#f2f4ff',
+  fontSize: '20px',
 }));
 
-const Fetchdata = () => {
+const Fetchdata = ({ searchQuery }) => {
   const [data, setData] = useState([]);
+  
 
   useEffect(() => {
     axios
@@ -32,26 +34,49 @@ const Fetchdata = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  const filteredData = data.filter(
+    (item) =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.username.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.website.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  
+  
   return (
-    <StyledTableContainer component={Paper} sx={{ width: '220%', maxHeight: 550, overflow: 'auto' }}>
-      <Table stickyHeader sx={{ width: '100%' }}>
+    <StyledTableContainer component={Paper} sx={{ width: '97%', maxHeight: 550, overflow: 'auto' }}>
+      <Table stickyHeader sx={{ tableLayout: 'fixed'}}>
         <TableHead>
           <StyledTableRow>
-            <StyledTableCell fontSize="20px">Name</StyledTableCell>
-            <StyledTableCell fontSize="20px">Username</StyledTableCell>
-            <StyledTableCell fontSize="20px">Email</StyledTableCell>
-            <StyledTableCell fontSize="20px">Website</StyledTableCell>
+            <StyledTableCell >Name</StyledTableCell>
+            <StyledTableCell >Username</StyledTableCell>
+            <StyledTableCell >Email</StyledTableCell>
+            <StyledTableCell >Website</StyledTableCell>
           </StyledTableRow>
         </TableHead>
         <TableBody>
-          {data.map((item) => (
-            <StyledTableRow key={item.id}>
-              <TableCell fontSize="16px">{item.name}</TableCell>
-              <TableCell fontSize="16px">{item.username}</TableCell>
-              <TableCell fontSize="16px">{item.email}</TableCell>
-              <TableCell fontSize="16px">{item.website}</TableCell>
-            </StyledTableRow>
-          ))}
+        {searchQuery.trim() === '' || filteredData.length === 0 ? (
+            // If the search query is empty or no matching items, display all data
+            data.map((item) => (
+              <StyledTableRow key={item.id}>
+                <TableCell fontSize="16px">{item.name}</TableCell>
+                <TableCell fontSize="16px">{item.username}</TableCell>
+                <TableCell fontSize="16px">{item.email}</TableCell>
+                <TableCell fontSize="16px">{item.website}</TableCell>
+              </StyledTableRow>
+            ))
+          ) : (
+            // If there are matching items, display the filtered data
+            filteredData.map((item) => (
+              <StyledTableRow key={item.id}>
+                <TableCell fontSize="16px">{item.name}</TableCell>
+                <TableCell fontSize="16px">{item.username}</TableCell>
+                <TableCell fontSize="16px">{item.email}</TableCell>
+                <TableCell fontSize="16px">{item.website}</TableCell>
+              </StyledTableRow>
+            ))
+          )}
         </TableBody>
       </Table>
     </StyledTableContainer>
