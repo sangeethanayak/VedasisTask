@@ -29,7 +29,7 @@ const Hero = () => {
             style={{ backgroundColor: '#fcfcfc', color: '#446879', font: 'bolder', borderRadius: '20px' }}
             size="large"
             startIcon={<DownloadIcon color="primary" />}
-            id="button1"
+            sx={{height:'50px',width:'150px'}}
           >
             Download
           </Button>
@@ -37,8 +37,16 @@ const Hero = () => {
 
         <div className="search-bar">
           <TextField
-            style={{ marginLeft: '300px', backgroundColor: '#fcfcfc', color: '#446879', borderRadius: '20px', width: '400px' }}
+            style={{ marginLeft: '15px', backgroundColor: '#fcfcfc', color: '#446879', borderRadius: '15px', width: '300px'}}
             variant="outlined"
+            sx={{
+              "& .MuiInputLabel-root": {borderColor: '#446879'},
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": { borderColor: "#2892d7" , borderRadius:'20px', height:'58px'},
+
+              },
+              height:"54px"
+            }}
             placeholder="Search for Influencer"
             InputProps={{
               startAdornment: <SearchIcon />,
@@ -49,12 +57,13 @@ const Hero = () => {
           <Button
             variant="outlined"
             color="primary"
-            style={{ marginLeft: '30px', backgroundColor: '#fcfcfc', color: '#446879', borderRadius: '10px', marginTop: '10px' }}
+            sx={{height:'50px',width:'125px'}}
+            style={{ marginLeft: '10px', backgroundColor: '#fcfcfc', color: '#446879', borderRadius: '10px' }}
             onClick={handleSearch}
           >
             Search
           </Button>
-          <IconButton color="primary" style={{ marginLeft: '20px' }}>
+          <IconButton color="primary" >
             <FilterIcon fontSize="large" />
           </IconButton>
         </div>

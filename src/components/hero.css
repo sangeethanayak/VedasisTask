@@ -3,20 +3,21 @@
     flex-direction: row;
     margin-top: 100px;
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: rgb(233, 248, 255);
     border-top: 3px solid rgb(231, 238, 245);
+    
   }
   
   .sub-container {
-    display: flex; /* Use flexbox */
-    flex-direction: row; /* Align items horizontally */
+    display: flex; 
+    flex-direction: row; 
     
-    column-gap: 40px;
+    column-gap: 30px;
     margin-top: 10px;
     margin-left: 140px;
-    padding: 10px; /* Optional: Add padding around the icons */
+    padding: 10px; 
   
     border-radius: 20px;
   }
@@ -25,18 +26,10 @@
     align-items: center;
     margin-top: 15px;
   }
-  .button-container {
-    position: absolute;
-    display: flex;
-   margin-left: 500px;
-    margin-top: 10px;
-  }
+  
   
  
-  .button-container .MuiButton-root {
-    width: 170px; 
-    
-  }
+  
   .sub-content {
     position: absolute;
     margin-top: 120px;

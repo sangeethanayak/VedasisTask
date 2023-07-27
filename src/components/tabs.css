@@ -1,91 +1,106 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
 :root {
-    --primary-color: #ffffff;
-    --secondary-color: #89b5f3;
+  --primary-color: #ffffff;
+  --secondary-color: #89b5f3;
 }
 
 *,
 *:after,
 *:before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    background-color: #fcfcfc;
+  font-family: "Inter", sans-serif;
+  background-color: #fcfcfc;
+  margin: 0; /* Remove body margin to avoid unnecessary spacing */
 }
 
-
-
 .tabs {
-    display: flex;
-    position: relative;
-    background-color: #fff;
-    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
-    padding: 0.10rem;
-    border-radius: 50px;
-    color: #446879;
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+  padding: 0.10rem;
+  border-radius: 50px;
+  color: #446879;
+  font-size: 24px;
+  overflow: hidden; /* Ensure tabs stay within container */
 }
 
 .tabs * {
-    z-index: 2;
+  z-index: 2;
 }
 
-input[type=radio] {
-    display: none;
+input[type="radio"] {
+  display: none;
 }
 
 .tab {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: 100px;
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: 99px;
-    cursor: pointer;
-    transition: color 0.15s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  min-width: 100px; /* Set a minimum width to ensure tabs are clickable on mobile */
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
 }
 
-
-
-input[type=radio]:checked+label {
-    color: var(#fcfcfc);
+input[type="radio"]:checked + label {
+  color: var(--primary-color); /* Corrected 'var' usage */
 }
 
-
-
-input[id=radio-1]:checked~.glider {
-    transform: translateX(0);
+/* Adjust the translation distance based on the number of tabs */
+input[id="radio-1"]:checked ~ .glider {
+  transform: translateX(0);
 }
 
-input[id=radio-2]:checked~.glider {
-    transform: translateX(100%);
+input[id="radio-2"]:checked ~ .glider {
+  transform: translateX(100%);
 }
 
-input[id=radio-3]:checked~.glider {
-    transform: translateX(200%);
+input[id="radio-3"]:checked ~ .glider {
+  transform: translateX(200%);
 }
 
-input[id=radio-4]:checked~.glider {
+input[id="radio-4"]:checked ~ .glider {
   transform: translateX(300%);
 }
 
 .glider {
-    position: absolute;
-    display: flex;
-    height: 50px;
-    width: 100px;
-    background-color: var(--secondary-color);
-    z-index: 1;
-    border-radius: 99px;
-    transition: 0.25s ease-out;
+  position: absolute;
+  display: flex;
+  height: 50px;
+  width: 100px; /* Set a width for the glider */
+  background-color: var(--secondary-color);
+  z-index: 1;
+  border-radius: 99px;
+  transition: 0.25s ease-out;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .tabs {
+    font-size: 18px; /* Adjust font size for tablets */
+  }
 }
 
 @media (max-width: 700px) {
-    .tabs {
-        transform: scale(0.6);
-    }
+  .tabs {
+    font-size: 16px; /* Adjust font size for mobile */
+    overflow-x: scroll; /* Add horizontal scroll for mobile to handle small screen width */
+    white-space: nowrap; /* Prevent tabs from wrapping to the next line */
+  }
+
+  .tab {
+    width: 120px; /* Increase the width of tabs for mobile to make them clickable */
+  }
+
+  .glider {
+    width: 120px; /* Match the width of glider with mobile tabs */
+  }
 }

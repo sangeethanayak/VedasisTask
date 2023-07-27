@@ -1,48 +1,87 @@
 .vertical-navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100px;
-    height: 100vh;
-    background-color: #fcfcfc;
-    padding: 20px;
-    border-right:3px solid rgb(231, 238, 245) ;
-    z-index: 10;
-    position: relative;
-  }
-  
-  .logo {
-    width: 50px;
-    height: 40px;
-    margin-top: 20px;
-    cursor: pointer;
-  }
-  
-  .icons {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 400px;
-    align-items: center;
-  }
-  
-  .icon {
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  max-width: 100px; /* Maximum width for desktop screens */
+  background-color: #fcfcfc;
+  padding: 20px;
+  border-right: 3px solid rgb(231, 238, 245);
+  position: fixed; /* Fixed position to keep the navbar visible during scrolling */
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.logo {
+  width: 50px;
+  height: 40px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20%;
+}
+
+.icon {
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#icon2 {
+  margin-top: 20px;
+}
+
+.settings-icon {
+  font-size: 28px;
+  margin-bottom: 3vh;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Tablet and Desktop Styles */
+@media (min-width: 768px) {
+  .vertical-navbar {
+    max-width: 75px; /* Maximum width for tablet screens */
    
-    cursor: pointer;
-    z-index: 10;
-  }
-  #icon2{
-    margin-top: 20px;
   }
 
-  
-  .settings-icon {
-    font-size: 28px;
-    margin-bottom:30px;
-    color: #333;
-    cursor: pointer;
+  .logo {
+    margin-top: 10%;
   }
-  
-  
+  .icons{
+    display: flex;
+  }
+
+  .settings-icon {
+    font-size: 32px;
+    display: flex;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .vertical-navbar {
+    max-width: 100px; /* Maximum width for desktop screens */
+    
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    margin-top: 10%;
+    display: flex;
+  }
+
+  .settings-icon {
+    font-size: 36px;
+  }
+}

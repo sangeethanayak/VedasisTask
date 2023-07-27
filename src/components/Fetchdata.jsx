@@ -19,7 +19,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
   borderRadius: '20px', 
   overflow: 'hidden',
-  backgroundColor: '#f2f4ff',
+  backgroundColor: '#faffff',
   fontSize: '20px',
 }));
 
@@ -48,7 +48,7 @@ const Fetchdata = ({ searchQuery }) => {
     <StyledTableContainer component={Paper} sx={{ width: '97%', maxHeight: 550, overflow: 'auto' }}>
       <Table stickyHeader sx={{ tableLayout: 'fixed'}}>
         <TableHead>
-          <StyledTableRow>
+          <StyledTableRow >
             <StyledTableCell >Name</StyledTableCell>
             <StyledTableCell >Username</StyledTableCell>
             <StyledTableCell >Email</StyledTableCell>
@@ -57,23 +57,23 @@ const Fetchdata = ({ searchQuery }) => {
         </TableHead>
         <TableBody>
         {searchQuery.trim() === '' || filteredData.length === 0 ? (
-            // If the search query is empty or no matching items, display all data
+            
             data.map((item) => (
               <StyledTableRow key={item.id}>
-                <TableCell fontSize="16px">{item.name}</TableCell>
-                <TableCell fontSize="16px">{item.username}</TableCell>
-                <TableCell fontSize="16px">{item.email}</TableCell>
-                <TableCell fontSize="16px">{item.website}</TableCell>
+                <TableCell sx={{height:'60px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.name}</TableCell>
+                <TableCell sx={{height:'60px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.username}</TableCell>
+                <TableCell sx={{height:'60px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.email}</TableCell>
+                <TableCell sx={{height:'60px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.website}</TableCell>
               </StyledTableRow>
             ))
           ) : (
-            // If there are matching items, display the filtered data
+            
             filteredData.map((item) => (
               <StyledTableRow key={item.id}>
-                <TableCell fontSize="16px">{item.name}</TableCell>
-                <TableCell fontSize="16px">{item.username}</TableCell>
-                <TableCell fontSize="16px">{item.email}</TableCell>
-                <TableCell fontSize="16px">{item.website}</TableCell>
+                <TableCell sx={{height:'70px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.name}</TableCell>
+                <TableCell sx={{height:'70px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.username}</TableCell>
+                <TableCell sx={{height:'70px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.email}</TableCell>
+                <TableCell sx={{height:'70px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.website}</TableCell>
               </StyledTableRow>
             ))
           )}
