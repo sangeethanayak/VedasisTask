@@ -28,8 +28,9 @@ const Hero = () => {
             variant="contained"
             style={{ backgroundColor: '#fcfcfc', color: '#446879', font: 'bolder', borderRadius: '20px' }}
             size="large"
-            startIcon={<DownloadIcon color="primary" />}
+            startIcon={<DownloadIcon color="primary" id="downloadicon"/>}
             sx={{height:'50px',width:'150px'}}
+            id='download'
           >
             Download
           </Button>
@@ -39,6 +40,7 @@ const Hero = () => {
           <TextField
             style={{ marginLeft: '15px', backgroundColor: '#fcfcfc', color: '#446879', borderRadius: '15px', width: '300px'}}
             variant="outlined"
+            id="textfield"
             sx={{
               "& .MuiInputLabel-root": {borderColor: '#446879'},
               "& .MuiOutlinedInput-root": {
@@ -47,6 +49,7 @@ const Hero = () => {
               },
               height:"54px"
             }}
+            
             placeholder="Search for Influencer"
             InputProps={{
               startAdornment: <SearchIcon />,
@@ -60,6 +63,7 @@ const Hero = () => {
             sx={{height:'50px',width:'125px'}}
             style={{ marginLeft: '10px', backgroundColor: '#fcfcfc', color: '#446879', borderRadius: '10px' }}
             onClick={handleSearch}
+            id="searchbutton"
           >
             Search
           </Button>

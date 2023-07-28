@@ -53,6 +53,17 @@
     margin-top: 80px;
     margin-left: 100px;
   }
+  #download{
+    width:90px;
+    height:40px;
+    font-size: x-small;
+  }
+  #downloadicon{
+    font-size:medium;
+  }
+  
+  
+  
 }
 
 
@@ -63,19 +74,27 @@
   }
 
   .sub-container {
-    margin-left: 100px;
+    margin-left: 80px;
     margin-right: 10px;
     column-gap: 10px;
   }
 
   .sub-content {
     margin-top: 70px;
-    margin-left: 110px;
+    margin-left: 90px;
   }
   #icon3 {
     align-items: center;
     margin-top: 10px;
     font-size: medium;
     
+  }
+  #download{
+    width:90px;
+    height:30px;
+    font-size: xx-small;
+  }
+  #downloadicon{
+    font-size:medium;
   }
 }

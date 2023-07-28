@@ -16,14 +16,17 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(even)': {
     backgroundColor: theme.palette.action.hover,
+    
   },
 }));
+
 
 const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
   borderRadius: '20px', 
   overflow: 'hidden',
   backgroundColor: '#faffff',
-  fontSize: '20px',maxHeight:'85vh'
+  fontSize: '20px',
+  maxHeight:'85vh',
 }));
 
 const Fetchdata = ({ searchQuery }) => {
@@ -45,7 +48,7 @@ const Fetchdata = ({ searchQuery }) => {
   );
 
   return (
-    <StyledTableContainer component={Paper} sx={{ width: '97%', maxHeight: 450, overflow: 'auto' }}>
+    <StyledTableContainer component={Paper} sx={{ width: '97%', height:'450px', overflow: 'auto' }}>
       <Table stickyHeader sx={{ tableLayout: 'fixed' }}>
         <TableHead>
           <StyledTableRow>
