@@ -1,3 +1,4 @@
+/* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
 :root {
@@ -14,7 +15,6 @@
 body {
   font-family: "Inter", sans-serif;
   background-color: #fcfcfc;
-  margin: 0; /* Remove body margin to avoid unnecessary spacing */
 }
 
 .tabs {
@@ -26,7 +26,7 @@ body {
   border-radius: 50px;
   color: #446879;
   font-size: 24px;
-  overflow: hidden; /* Ensure tabs stay within container */
+  overflow: hidden; 
 }
 
 .tabs * {
@@ -39,10 +39,11 @@ input[type="radio"] {
 
 .tab {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   height: 50px;
-  min-width: 100px; /* Set a minimum width to ensure tabs are clickable on mobile */
+  min-width: 100px;
   font-size: 1rem;
   font-weight: 700;
   border-radius: 99px;
@@ -51,10 +52,9 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked + label {
-  color: var(--primary-color); /* Corrected 'var' usage */
+  color: var(--primary-color); 
 }
 
-/* Adjust the translation distance based on the number of tabs */
 input[id="radio-1"]:checked ~ .glider {
   transform: translateX(0);
 }
@@ -75,32 +75,50 @@ input[id="radio-4"]:checked ~ .glider {
   position: absolute;
   display: flex;
   height: 50px;
-  width: 100px; /* Set a width for the glider */
+  width: 100px; 
   background-color: var(--secondary-color);
   z-index: 1;
   border-radius: 99px;
   transition: 0.25s ease-out;
 }
 
-/* Media Queries */
+/* Responsive CSS for tablets (max-width: 1024px) */
 @media (max-width: 1024px) {
   .tabs {
-    font-size: 18px; /* Adjust font size for tablets */
+    
+    padding: 0.08rem;
+    
+    
+  }
+  .tab {
+    
+    height:40px;
+    font-size: 0.9rem;
+    min-width: 80px;
+  }
+  .glider{
+    width:80px;
+    height:40px;
   }
 }
 
+/* Responsive CSS for phones (max-width: 700px) */
 @media (max-width: 700px) {
   .tabs {
-    font-size: 16px; /* Adjust font size for mobile */
-    overflow-x: scroll; /* Add horizontal scroll for mobile to handle small screen width */
-    white-space: nowrap; /* Prevent tabs from wrapping to the next line */
+    font-size: 14px; 
+    overflow-x: scroll; 
+    white-space: nowrap; 
+    padding: 0.06rem;
   }
 
   .tab {
-    width: 120px; /* Increase the width of tabs for mobile to make them clickable */
+    min-width: 50px;
+    font-size: 0.65rem;
+    height: 30px; 
   }
 
   .glider {
-    width: 120px; /* Match the width of glider with mobile tabs */
+    width: 50px;
+    height: 30px;
   }
 }

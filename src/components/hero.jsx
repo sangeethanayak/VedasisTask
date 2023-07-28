@@ -12,9 +12,9 @@ import FilterIcon from '@mui/icons-material/FilterList';
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Function to handle the search button click
+  
   const handleSearch = () => {
-    // Perform search action using the searchQuery state
+   
     console.log('Search query:', searchQuery);
   };
 

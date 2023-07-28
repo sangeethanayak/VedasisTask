@@ -6,8 +6,11 @@ import { styled } from '@mui/material/styles';
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   backgroundColor: '#2892d7',
   color: theme.palette.common.white,
+  
   fontWeight: 'bold',
-  fontSize: '20px'
+  fontSize: '18px',
+  whiteSpace: 'pre-wrap', 
+  wordWrap: 'break-word', 
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
@@ -20,12 +23,11 @@ const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
   borderRadius: '20px', 
   overflow: 'hidden',
   backgroundColor: '#faffff',
-  fontSize: '20px',
+  fontSize: '20px',maxHeight:'85vh'
 }));
 
 const Fetchdata = ({ searchQuery }) => {
   const [data, setData] = useState([]);
-  
 
   useEffect(() => {
     axios
@@ -42,38 +44,34 @@ const Fetchdata = ({ searchQuery }) => {
       item.website.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  
-  
   return (
-    <StyledTableContainer component={Paper} sx={{ width: '97%', maxHeight: 550, overflow: 'auto' }}>
-      <Table stickyHeader sx={{ tableLayout: 'fixed'}}>
+    <StyledTableContainer component={Paper} sx={{ width: '97%', maxHeight: 450, overflow: 'auto' }}>
+      <Table stickyHeader sx={{ tableLayout: 'fixed' }}>
         <TableHead>
-          <StyledTableRow >
-            <StyledTableCell >Name</StyledTableCell>
-            <StyledTableCell >Username</StyledTableCell>
-            <StyledTableCell >Email</StyledTableCell>
-            <StyledTableCell >Website</StyledTableCell>
+          <StyledTableRow>
+            <StyledTableCell>Name</StyledTableCell>
+            <StyledTableCell>Username</StyledTableCell>
+            <StyledTableCell>Email</StyledTableCell>
+            <StyledTableCell>Website</StyledTableCell>
           </StyledTableRow>
         </TableHead>
         <TableBody>
-        {searchQuery.trim() === '' || filteredData.length === 0 ? (
-            
+          {searchQuery.trim() === '' || filteredData.length === 0 ? (
             data.map((item) => (
               <StyledTableRow key={item.id}>
-                <TableCell sx={{height:'60px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.name}</TableCell>
-                <TableCell sx={{height:'60px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.username}</TableCell>
-                <TableCell sx={{height:'60px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.email}</TableCell>
-                <TableCell sx={{height:'60px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.website}</TableCell>
+                <TableCell sx={{ height: '50px', fontSize: "14px", fontWeight: 'bold', color: '#446879' }}>{item.name}</TableCell>
+                <TableCell sx={{ height: '50px', fontSize: "14px", fontWeight: 'bold', color: '#446879' }}>{item.username}</TableCell>
+                <TableCell sx={{ height: '50px', fontSize: "14px", fontWeight: 'bold', color: '#446879' }}>{item.email}</TableCell>
+                <TableCell sx={{ height: '50px', fontSize: "14px", fontWeight: 'bold', color: '#446879' }}>{item.website}</TableCell>
               </StyledTableRow>
             ))
           ) : (
-            
             filteredData.map((item) => (
               <StyledTableRow key={item.id}>
-                <TableCell sx={{height:'70px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.name}</TableCell>
-                <TableCell sx={{height:'70px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.username}</TableCell>
-                <TableCell sx={{height:'70px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.email}</TableCell>
-                <TableCell sx={{height:'70px',fontSize:"18px", fontWeight:'bold', color:'#446879'}}>{item.website}</TableCell>
+                <TableCell sx={{ height: '50px', fontSize: "14px", fontWeight: 'bold', color: '#446879' }}>{item.name}</TableCell>
+                <TableCell sx={{ height: '50px', fontSize: "14px", fontWeight: 'bold', color: '#446879' }}>{item.username}</TableCell>
+                <TableCell sx={{ height: '50px', fontSize: "14px", fontWeight: 'bold', color: '#446879' }}>{item.email}</TableCell>
+                <TableCell sx={{ height: '50px', fontSize: "14px", fontWeight: 'bold', color: '#446879' }}>{item.website}</TableCell>
               </StyledTableRow>
             ))
           )}

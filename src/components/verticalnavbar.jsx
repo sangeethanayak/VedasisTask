@@ -16,7 +16,7 @@ const VerticalNavbar = () => {
        </Button>
         <TagIcon fontSize="large" className="icon" id="icon2" />
       </div>
-      <SettingsIcon fontSize="large" className="settings-icon" />
+      <SettingsIcon fontSize="large" className="settings-icon" id='settingsicon' />
     </div>
   );
 };
