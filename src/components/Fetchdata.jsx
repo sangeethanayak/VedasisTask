@@ -48,7 +48,7 @@ const Fetchdata = ({ searchQuery }) => {
   );
 
   return (
-    <StyledTableContainer component={Paper} sx={{ width: '97%', height:'450px', overflow: 'auto' }}>
+    <StyledTableContainer component={Paper} sx={{ width: '97%', height:'400px', overflow: 'auto' }}>
       <Table stickyHeader sx={{ tableLayout: 'fixed' }}>
         <TableHead>
           <StyledTableRow>

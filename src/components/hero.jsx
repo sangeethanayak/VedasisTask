@@ -36,11 +36,12 @@ const Hero = () => {
           </Button>
         </div>
 
-        <div className="search-bar">
+        
           <TextField
             style={{ marginLeft: '15px', backgroundColor: '#fcfcfc', color: '#446879', borderRadius: '15px', width: '300px'}}
+            id='textfield'
             variant="outlined"
-            id="textfield"
+            
             sx={{
               "& .MuiInputLabel-root": {borderColor: '#446879'},
               "& .MuiOutlinedInput-root": {
@@ -60,17 +61,17 @@ const Hero = () => {
           <Button
             variant="outlined"
             color="primary"
-            sx={{height:'50px',width:'125px'}}
-            style={{ marginLeft: '10px', backgroundColor: '#fcfcfc', color: '#446879', borderRadius: '10px' }}
+            sx={{height:'50px',width:'105px'}}
+            style={{  backgroundColor: '#fcfcfc', color: '#446879', borderRadius: '10px' }}
             onClick={handleSearch}
             id="searchbutton"
           >
             Search
           </Button>
           <IconButton color="primary" >
-            <FilterIcon fontSize="large" />
+            <FilterIcon fontSize="large" id="filtericon"/>
           </IconButton>
-        </div>
+       
       </div>
       <div className="sub-content">
      <Fetchdata searchQuery={searchQuery} />

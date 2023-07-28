@@ -12,7 +12,7 @@
 .sub-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  
   column-gap: 30px;
   margin-top: 10px;
   margin-left: 140px;
@@ -30,7 +30,13 @@
   margin-top: 100px;
   margin-left: 150px;
 }
-
+#filtericon{
+  margin-bottom: 560px;
+ margin-left: -10px;
+}
+#searchbutton{
+  margin-left: -10px;
+}
 
 @media (max-width: 1024px) {
   .content {
@@ -61,8 +67,23 @@
   #downloadicon{
     font-size:medium;
   }
-  
-  
+  #textfield{
+    height:20px;
+    width:10px;
+    margin-left: 0px;
+    font-size: 16px;
+  }
+  #searchbutton{
+    width:10px;
+    height: 40px;
+    margin-left: -10px;
+    font-size: x-small;
+  }
+  #filtericon{
+    font-size: large;
+    margin-top: 0px;
+    margin-left: -10px;
+  }
   
 }
 
@@ -96,5 +117,16 @@
   }
   #downloadicon{
     font-size:medium;
+  }
+  #searchbutton{
+    width:5px;
+    height: 30px;
+    margin-left: -10px;
+    font-size: xx-small;
+  }
+  #filtericon{
+    font-size: medium;
+    margin-top: 0px;
+    margin-left: -15px;
   }
 }
