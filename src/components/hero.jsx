@@ -36,24 +36,25 @@ const Hero = () => {
           </Button>
         </div>
 
-        
+          
           <TextField
             style={{ marginLeft: '15px', backgroundColor: '#fcfcfc', color: '#446879', borderRadius: '15px', width: '300px'}}
-            id='textfield'
+            id="textfield"
             variant="outlined"
             
             sx={{
               "& .MuiInputLabel-root": {borderColor: '#446879'},
               "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "#2892d7" , borderRadius:'20px', height:'58px'},
-
+                "& > fieldset": { borderColor: "#2892d7" , borderRadius:'20px', height:'55px'},
+                 
               },
-              height:"54px"
+              height:"51px"
+              
             }}
             
             placeholder="Search for Influencer"
             InputProps={{
-              startAdornment: <SearchIcon />,
+              startAdornment: <SearchIcon id="searchicon"/>,
             }}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}

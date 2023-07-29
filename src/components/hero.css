@@ -67,12 +67,15 @@
   #downloadicon{
     font-size:medium;
   }
-  #textfield{
-    height:20px;
-    width:10px;
-    margin-left: 0px;
-    font-size: 16px;
+  .textfield {
+    height:15px;
+    
   }
+  #searchicon{
+    font-size: large;
+    margin-left: -15px;
+  }
+  
   #searchbutton{
     width:10px;
     height: 40px;
@@ -110,23 +113,14 @@
     font-size: medium;
     
   }
-  #download{
-    width:90px;
-    height:30px;
-    font-size: xx-small;
-  }
-  #downloadicon{
-    font-size:medium;
-  }
-  #searchbutton{
-    width:5px;
-    height: 30px;
-    margin-left: -10px;
-    font-size: xx-small;
-  }
+  
+  
   #filtericon{
-    font-size: medium;
+    font-size: large;
     margin-top: 0px;
     margin-left: -15px;
+  }
+  #searchicon{
+    font-size: medium;
   }
 }
