@@ -37,8 +37,13 @@
 #searchbutton{
   margin-left: -10px;
 }
-
-@media (max-width: 1024px) {
+#downloadicon{
+  display:none;
+}
+#searchicon1{
+  display:none;
+}
+@media (max-width: 1230px) {
   .content {
     flex-direction: column;
     margin-top: 65px;
@@ -65,7 +70,7 @@
     font-size: x-small;
   }
   #downloadicon{
-    font-size:medium;
+    display:none;
   }
   .textfield {
     height:15px;
@@ -75,7 +80,9 @@
     font-size: large;
     margin-left: -15px;
   }
-  
+  #searchicon1{
+    display:none;
+  }
   #searchbutton{
     width:10px;
     height: 40px;
@@ -87,6 +94,7 @@
     margin-top: 0px;
     margin-left: -10px;
   }
+
   
 }
 
@@ -104,7 +112,7 @@
   }
 
   .sub-content {
-    margin-top: 70px;
+    margin-top: 80px;
     margin-left: 90px;
   }
   #icon3 {
@@ -113,7 +121,15 @@
     font-size: medium;
     
   }
-  
+  #downloadicon{
+    cursor: pointer;
+    display: block;
+    font-size: larger;
+    margin-top: 10px;
+  }
+  #download{
+    display:none;
+  }
   
   #filtericon{
     font-size: large;
@@ -122,5 +138,20 @@
   }
   #searchicon{
     font-size: medium;
+  }
+}
+@media(max-width:520px)
+{
+  #searchbutton{
+    display: none;
+  }
+  #searchicon1{
+    display:none;
+  }
+  .sub-container{
+    column-gap: 2px;
+  }
+  #filtericon{
+    margin-right: -20px;
   }
 }

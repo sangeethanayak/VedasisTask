@@ -16,6 +16,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(even)': {
     backgroundColor: theme.palette.action.hover,
+    whiteSpace: 'pre-wrap', 
+  wordWrap: 'break-word',
     
   },
 }));
@@ -27,6 +29,8 @@ const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
   backgroundColor: '#faffff',
   fontSize: '20px',
   maxHeight:'85vh',
+  whiteSpace: 'pre-wrap', 
+  wordWrap: 'break-word',
 }));
 
 const Fetchdata = ({ searchQuery }) => {

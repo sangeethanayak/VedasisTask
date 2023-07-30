@@ -81,9 +81,43 @@ input[id="radio-4"]:checked ~ .glider {
   border-radius: 99px;
   transition: 0.25s ease-out;
 }
+.bars-icon {
+  display: none;
+  cursor: pointer;
+  position: relative;
+  width: 25px;
+  height: 20px;
+  padding: 5px;
+  margin-right: 10px;
+}
+.bars-icon, .tab {
+  text-decoration: none; 
+}
+.bar {
+  width: 100%;
+  height: 2px;
+  background-color: #446879;
+  margin: 4px 0;
+  transition: transform 0.2s ease-in-out;
+}
 
-/* Responsive CSS for tablets (max-width: 1024px) */
-@media (max-width: 1024px) {
+.tabs-content-hidden .tabs-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.tabs-content-hidden .tabs-column {
+  padding-top: 10px;
+}
+
+
+
+
+
+
+@media (max-width: 1230px) {
   .tabs {
     
     padding: 0.08rem;
@@ -102,7 +136,7 @@ input[id="radio-4"]:checked ~ .glider {
   }
 }
 
-/* Responsive CSS for phones (max-width: 700px) */
+
 @media (max-width: 700px) {
   .tabs {
     font-size: 14px; 
@@ -121,4 +155,20 @@ input[id="radio-4"]:checked ~ .glider {
     width: 50px;
     height: 30px;
   }
+}
+
+@media (max-width: 520px) {
+  .tabs {
+    display: none;
+  }
+
+  .glider {
+    display: none;
+  }
+
+  .bars-icon {
+    display: block;
+    margin-top: 5px;
+  }
+  
 }

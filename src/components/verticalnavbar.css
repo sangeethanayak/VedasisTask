@@ -47,7 +47,7 @@
 }
 
 /* Responsive CSS for tablets (max-width: 1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 1230px) {
   .vertical-navbar {
     max-width: 80px;
   }

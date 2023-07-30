@@ -28,15 +28,16 @@ const Hero = () => {
             variant="contained"
             style={{ backgroundColor: '#fcfcfc', color: '#446879', font: 'bolder', borderRadius: '20px' }}
             size="large"
-            startIcon={<DownloadIcon color="primary" id="downloadicon"/>}
+            startIcon={<DownloadIcon color="primary"/>}
             sx={{height:'50px',width:'150px'}}
             id='download'
           >
             Download
           </Button>
-        </div>
-
           
+        </div>
+        
+        <DownloadIcon color="primary" id="downloadicon"/>
           <TextField
             style={{ marginLeft: '15px', backgroundColor: '#fcfcfc', color: '#446879', borderRadius: '15px', width: '300px'}}
             id="textfield"
@@ -59,6 +60,7 @@ const Hero = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
+          <SearchIcon id="searchicon1"/>
           <Button
             variant="outlined"
             color="primary"

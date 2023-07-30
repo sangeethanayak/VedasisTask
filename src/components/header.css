@@ -49,7 +49,7 @@
   color: #555;
   margin-top: 5px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1230px) {
   .profile-info {
     margin-bottom: 12px;
     padding: 8px 15px;
@@ -97,4 +97,3 @@
   }
 }
 
-/* Responsive styles for even smaller screens */
